@@ -6,6 +6,7 @@ int main(void){
 
     int opcion;
     double num1, num2;
+     do {
 
         cout << endl << "CALCULADORA" << endl << endl;
         cout << "1. Sumar" << endl;
@@ -24,6 +25,35 @@ int main(void){
             cin >> num2;
         }
     
+        
+       switch (opcion) {
+            case 1:
+                cout << "Resultado: " << num1 + num2 << endl;
+                break;
+            case 2:
+                cout << "Resultado: " << num1 - num2 << endl;
+                break;
+            case 3:
+                cout << "Resultado: " << num1 * num2 << endl;
+                break;
+            case 4:
+                if (num2 != 0) {
+                    cout << "Resultado: " << num1 / num2 << endl;
+                } else {
+                    cout << "Error: No se puede dividir entre cero." << endl;
+                }
+                break;
+            case 5:
+                cout << "Saliendo de la calculadora..." << endl;
+                break;
+            default:
+                cout << "Opcion invalida." << endl;
+        }
+
+    } while (opcion != 5);
+
+
 
     return 0;
 }
+
