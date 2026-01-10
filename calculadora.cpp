@@ -7,8 +7,6 @@ int main(void){
     int opcion;
     double num1, num2;
 
-    do{
-
         cout << endl << "CALCULADORA" << endl << endl;
         cout << "1. Sumar" << endl;
         cout << "2. Restar" << endl;
@@ -25,7 +23,7 @@ int main(void){
             cout << "Ingrese el segundo numero: ";
             cin >> num2;
         }
-    }
+    
 
     return 0;
 }
