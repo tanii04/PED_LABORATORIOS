@@ -78,7 +78,21 @@ public:
 
 int main(void){
 
+    ListaEnlazada lista;
 
+    lista.agregarEstudiante("Pame", 9.5);
+    lista.agregarEstudiante("Gerardo", 7.8);
+    lista.agregarEstudiante("Tania", 9.2);
+    lista.agregarEstudiante("Monse", 8.8);
+    lista.agregarEstudiante("Nicole", 9.0);
+    lista.agregarEstudiante("Leilany", 8.5);
+
+    cout << endl << "Lista de estudiantes:" << endl;
+    lista.imprimirLista();
+
+    cout << endl;
+    cout << "Promedio de notas: "
+         << lista.calcularPromedioRecursivo() << endl;
 
     return 0;
 }
