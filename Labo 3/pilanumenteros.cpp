@@ -48,6 +48,15 @@ void mostrarPila(nodo* tope) {
     }
 }
 
+int sumarPila(nodo* tope){
+    int suma = 0;
+    while(tope != NULL){
+        suma += tope->dato;
+        tope = tope->siguiente;
+    }
+    return suma;
+}
+
 int main(void){
 
     return 0;
