@@ -28,6 +28,14 @@ void pop(nodo*& tope){
    cout << "Su elemento se ha eliminado de la pila" << endl;
 }
 
+void top(nodo*tope){
+    if(tope == NULL){
+        cout << "No hay ningun elemento en el tope" << endl;
+        return;
+    }
+    cout << "El elemento del tope es: " << tope->dato << endl;
+}
+
 int main(void){
 
     return 0;
