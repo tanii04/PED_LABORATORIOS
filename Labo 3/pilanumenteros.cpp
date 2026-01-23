@@ -36,6 +36,18 @@ void top(nodo*tope){
     cout << "El elemento del tope es: " << tope->dato << endl;
 }
 
+void mostrarPila(nodo* tope) {
+    if (tope == NULL) {
+        cout << "No hay elementos en la pila" << endl;
+        return;
+    }
+    cout << "Los elementos de la pila son: " << endl;
+    while (tope != NULL) {
+        cout << tope->dato << endl;
+        tope = tope->siguiente;
+    }
+}
+
 int main(void){
 
     return 0;
