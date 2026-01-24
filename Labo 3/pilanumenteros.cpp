@@ -64,15 +64,46 @@ int main(void){
 
     do {
         cout << endl << " MENU " << endl;
-        cout << "1. Insertar un número (push)" << endl;
+        cout << "1. Insertar un numero (push)" << endl;
         cout << "2. Eliminar el tope (pop)" <<endl;
         cout << "3. Mostrar el tope (top)" <<endl;
         cout << "4. Mostrar todos los elementos" << endl;
         cout << "5. Sumar los elementos"<< endl;
         cout << "6. Salir"<< endl;
-        cout << "Seleccione una opción: ";
+        cout << "Seleccione una opcion:";
         cin >> opcion;
 
+switch (opcion) {
+            case 1:
+                cout << "Ingrese un numero: ";
+                cin >> valor;
+                push(pila, valor);
+                break;
+
+            case 2:
+                pop(pila);
+                break;
+
+            case 3:
+                top(pila);
+                break;
+
+            case 4:
+                mostrarPila(pila);
+                break;
+
+            case 5:
+                cout << "Suma total: " << sumarPila(pila) << endl;
+                break;
+
+            case 6:
+                cout << "Saliendo del programa..."<< endl;
+                break;
+
+            default:
+                cout << "Opción invalida."<< endl;
+        }
+    } while (opcion != 6);
 
 
     return 0;
