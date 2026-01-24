@@ -59,5 +59,21 @@ int sumarPila(nodo* tope){
 
 int main(void){
 
+    nodo* pila = NULL;
+    int opcion, valor;
+
+    do {
+        cout << endl << " MENU " << endl;
+        cout << "1. Insertar un número (push)" << endl;
+        cout << "2. Eliminar el tope (pop)" <<endl;
+        cout << "3. Mostrar el tope (top)" <<endl;
+        cout << "4. Mostrar todos los elementos" << endl;
+        cout << "5. Sumar los elementos"<< endl;
+        cout << "6. Salir"<< endl;
+        cout << "Seleccione una opción: ";
+        cin >> opcion;
+
+
+
     return 0;
 }
