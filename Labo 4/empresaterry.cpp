@@ -142,3 +142,13 @@ void editarPaquete(int id) {
 
     cout << "Paquete editado correctamente." << endl;
 }
+
+void liberarLista() {
+    Nodo* aux;
+    while (head != nullptr) {
+        aux = head;
+        head = head->sig;
+        delete aux;
+    }
+    tail = nullptr;
+}
