@@ -124,3 +124,21 @@ int contarPaquetes() {
     }
     return cont;
 }
+
+void editarPaquete(int id) {
+    Nodo* aux = buscarPorId(id);
+
+    if (aux == nullptr) {
+        cout << "Paquete no encontrado." << endl ;
+        return;
+    }
+
+    cout << "Nuevo nombre: ";
+    cin.ignore();
+    getline(cin, aux->nombre);
+
+    cout << "Nuevo peso: ";
+    cin >> aux->peso;
+
+    cout << "Paquete editado correctamente." << endl;
+}
