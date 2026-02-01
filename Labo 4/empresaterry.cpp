@@ -89,3 +89,28 @@ void mostrarAtras() {
         aux = aux->ant;
     }
 }
+
+void eliminarPorId(int id) {
+    Nodo* aux = buscarPorId(id);
+
+    if (aux == nullptr) {
+        cout << "Paquete no encontrado."<< endl;
+        return;
+    }
+
+    if (aux == head && aux == tail) { 
+        head = tail = nullptr;
+    } else if (aux == head) { 
+        head = head->sig;
+        head->ant = nullptr;
+    } else if (aux == tail) { 
+        tail = tail->ant;
+        tail->sig = nullptr;
+    } else { 
+        aux->ant->sig = aux->sig;
+        aux->sig->ant = aux->ant;
+    }
+
+    delete aux;
+    cout << "Paquete eliminado."<<endl;
+}
