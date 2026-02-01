@@ -59,3 +59,18 @@ void insertarFinal(int id, string nombre, float peso) {
 
     cout << "Paquete insertado al final." << endl;
 }
+
+void mostrarAdelante() {
+    if (head == nullptr) {
+        cout << "La lista está vacía."<<endl;
+        return;
+    }
+
+    Nodo* aux = head;
+    while (aux != nullptr) {
+        cout << "ID: " << aux->id
+             << " Nombre: " << aux->nombre
+             << " Peso: " << aux->peso << endl;
+        aux = aux->sig;
+    }
+}
