@@ -23,3 +23,21 @@ Nodo* buscarPorId(int id) {
     }
     return nullptr;
 }
+
+void insertarInicio(int id, string nombre, float peso) {
+    if (buscarPorId(id) != nullptr) {
+        cout << "El id ya existe."<< endl;
+        return;
+    }
+
+    Nodo* nuevo = new Nodo{id, nombre, peso, head, nullptr};
+
+    if (head == nullptr) { 
+        head = tail = nuevo;
+    } else {
+        head->ant = nuevo;
+        head = nuevo;
+    }
+
+    cout << "Paquete insertado al inicio."<< endl;
+}
