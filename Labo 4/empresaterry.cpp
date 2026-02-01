@@ -152,3 +152,91 @@ void liberarLista() {
     }
     tail = nullptr;
 }
+int main() {
+    int opcion, id;
+    string nombre;
+    float peso;
+
+    do {
+        cout << endl << " MENU " << endl;
+        cout << "1. Insertar paquete al final" << endl;
+        cout << "2. Insertar paquete al inicio" << endl;
+        cout << "3. Mostrar lista adelante" << endl;
+        cout << "4. Mostrar lista atras" << endl;
+        cout << "5. Buscar paquete por id" << endl;
+        cout << "6. Eliminar paquete por id" << endl;
+        cout << "7. Mostrar cantidad de paquetes" << endl;
+        cout << "8. Editar paquete por id" << endl;
+        cout << "9. Salir" << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                cout << "ID: ";
+                cin >> id;
+                cin.ignore();
+                cout << "Nombre: ";
+                getline(cin, nombre);
+                cout << "Peso: ";
+                cin >> peso;
+                insertarFinal(id, nombre, peso);
+                break;
+
+            case 2:
+                cout << "ID: ";
+                cin >> id;
+                cin.ignore();
+                cout << "Nombre: ";
+                getline(cin, nombre);
+                cout << "Peso: ";
+                cin >> peso;
+                insertarInicio(id, nombre, peso);
+                break;
+
+            case 3:
+                mostrarAdelante();
+                break;
+
+            case 4:
+                mostrarAtras();
+                break;
+
+            case 5:
+                cout << "ID a buscar: ";
+                cin >> id;
+                if (buscarPorId(id))
+                    cout << "Paquete encontrado." << endl;
+                else
+                    cout << "Paquete no encontrado." << endl;
+                break;
+
+            case 6:
+                cout << "ID a eliminar: ";
+                cin >> id;
+                eliminarPorId(id);
+                break;
+
+            case 7:
+                cout << "Total de paquetes: " << contarPaquetes() << endl;
+                break;
+
+            case 8:
+                cout << "ID a editar: ";
+                cin >> id;
+                editarPaquete(id);
+                break;
+
+            case 9:
+                liberarLista();
+                cout << "Saliendo del programa..." << endl;
+                break;
+
+            default:
+                cout << "Opción inválida." << endl;
+        }
+
+    } while (opcion != 9);
+
+return 0;
+}
