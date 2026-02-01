@@ -74,3 +74,18 @@ void mostrarAdelante() {
         aux = aux->sig;
     }
 }
+
+void mostrarAtras() {
+    if (tail == nullptr) {
+        cout << "La lista está vacía."<< endl;
+        return;
+    }
+
+    Nodo* aux = tail;
+    while (aux != nullptr) {
+        cout << "ID: " << aux->id
+             << "Nombre: " << aux->nombre
+             << "Peso: " << aux->peso << endl;
+        aux = aux->ant;
+    }
+}
