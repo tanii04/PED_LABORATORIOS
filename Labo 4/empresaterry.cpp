@@ -114,3 +114,13 @@ void eliminarPorId(int id) {
     delete aux;
     cout << "Paquete eliminado."<<endl;
 }
+
+int contarPaquetes() {
+    int cont = 0;
+    Nodo* aux = head;
+    while (aux != nullptr) {
+        cont++;
+        aux = aux->sig;
+    }
+    return cont;
+}
