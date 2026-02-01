@@ -41,3 +41,21 @@ void insertarInicio(int id, string nombre, float peso) {
 
     cout << "Paquete insertado al inicio."<< endl;
 }
+
+void insertarFinal(int id, string nombre, float peso) {
+    if (buscarPorId(id) != nullptr) {
+        cout << "El id ya existe."<< endl;
+        return;
+    }
+
+    Nodo* nuevo = new Nodo{id, nombre, peso, nullptr, tail};
+
+    if (tail == nullptr) { 
+        head = tail = nuevo;
+    } else {
+        tail->sig = nuevo;
+        tail = nuevo;
+    }
+
+    cout << "Paquete insertado al final." << endl;
+}
