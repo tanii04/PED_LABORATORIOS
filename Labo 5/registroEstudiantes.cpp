@@ -77,3 +77,15 @@ if (raiz == NULL) {
     }
 }
 
+// 4. Mostrar estudiantes aprobados (nota >= 6.0)
+void mostrarAprobados(Estudiante* raiz) {
+if (raiz != NULL) {
+        mostrarAprobados(raiz->izquierdo);
+
+        if (raiz->nota >= 6.0) {
+            cout << raiz->nombre << " - " << raiz->nota << endl;
+        }
+
+        mostrarAprobados(raiz->derecho);
+    }
+}
