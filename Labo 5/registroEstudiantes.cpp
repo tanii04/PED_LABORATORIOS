@@ -135,3 +135,97 @@ Estudiante* encontrarMejorNota(Estudiante* raiz) {
 
     return mejor;
 }
+
+int main() {
+
+    Estudiante* sistema = NULL;
+    int opcion;
+
+    do {
+        cout << "\n===== SISTEMA DE GESTION DE ESTUDIANTES =====\n";
+        cout << "1. Agregar estudiante\n";
+        cout << "2. Mostrar todos los estudiantes\n";
+        cout << "3. Buscar estudiante por carnet\n";
+        cout << "4. Mostrar estudiantes aprobados\n";
+        cout << "5. Mostrar estudiantes reprobados\n";
+        cout << "6. Calcular promedio general\n";
+        cout << "7. Mostrar estudiante con mejor nota\n";
+        cout << "8. Salir\n";
+        cout << "Opcion: ";
+        cin >> opcion;
+
+// Implementa el switch con las opciones
+        switch(opcion) {
+
+        case 1: {
+            int carnet;
+            char nombre[50];
+            float nota;
+
+            cout << "Carnet: ";
+            cin >> carnet;
+
+            cout << "Nombre: ";
+            cin >> nombre;
+
+            cout << "Nota: ";
+            cin >> nota;
+
+            sistema = insertar(sistema, carnet, nombre, nota);
+            break;
+        }
+
+        case 2:
+            mostrarEstudiantes(sistema);
+            break;
+
+        case 3: {
+            int carnet;
+            cout << "Ingrese carnet a buscar: ";
+            cin >> carnet;
+            buscarEstudiante(sistema, carnet);
+            break;
+        }
+
+        case 4:
+            mostrarAprobados(sistema);
+            break;
+
+        case 5:
+            mostrarReprobados(sistema);
+            break;
+
+        case 6: {
+            int contador = 0;
+            float suma = calcularPromedio(sistema, &contador);
+
+            if (contador > 0)
+                cout << "Promedio general: " << suma / contador << endl;
+            else
+                cout << "No hay estudiantes registrados.\n";
+            break;
+        }
+
+        case 7: {
+            Estudiante* mejor = encontrarMejorNota(sistema);
+
+            if (mejor != NULL)
+                cout << "Mejor estudiante: " << mejor->nombre
+                     << " - " << mejor->nota << endl;
+            else
+                cout << "No hay estudiantes registrados.\n";
+            break;
+        }
+
+        case 8:
+            cout << "Saliendo del sistema...\n";
+            break;
+
+        default:
+            cout << "Opcion invalida.\n";
+        }
+
+    } while(opcion != 8);
+
+    return 0;
+}  
