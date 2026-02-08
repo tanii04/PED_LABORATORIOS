@@ -117,3 +117,21 @@ float calcularPromedio(Estudiante* raiz, int* contador) {
 
     return sumaIzq + sumaDer + raiz->nota;
 } 
+
+// 7. Encontrar al estudiante con la nota más alta
+Estudiante* encontrarMejorNota(Estudiante* raiz) {
+    if (raiz == NULL) return NULL;
+
+    Estudiante* mejorIzq = encontrarMejorNota(raiz->izquierdo);
+    Estudiante* mejorDer = encontrarMejorNota(raiz->derecho);
+
+    Estudiante* mejor = raiz;
+
+    if (mejorIzq != NULL && mejorIzq->nota > mejor->nota)
+        mejor = mejorIzq;
+
+    if (mejorDer != NULL && mejorDer->nota > mejor->nota)
+        mejor = mejorDer;
+
+    return mejor;
+}
