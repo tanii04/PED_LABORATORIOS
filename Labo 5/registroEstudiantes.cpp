@@ -91,7 +91,8 @@ if (raiz != NULL) {
 }
 
 // 5. Mostrar estudiantes reprobados (nota < 6.0)
-void mostrarReprobados(Estudiante* raiz) {
+void mostrarReprobados(Estudiante* raiz) 
+{
     if (raiz != NULL) {
         mostrarReprobados(raiz->izquierdo);
 
@@ -102,3 +103,17 @@ void mostrarReprobados(Estudiante* raiz) {
         mostrarReprobados(raiz->derecho);
     }
 }
+
+// 6. Calcular el promedio de todas las notas
+float calcularPromedio(Estudiante* raiz, int* contador) {
+    if (raiz == NULL) {
+        return 0;
+    }
+
+    float sumaIzq = calcularPromedio(raiz->izquierdo, contador);
+    float sumaDer = calcularPromedio(raiz->derecho, contador);
+
+    (*contador)++;
+
+    return sumaIzq + sumaDer + raiz->nota;
+} 
